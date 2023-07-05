@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="Gallery.css">
+</head>
+<body>
+	<div class='container'>
+		<h2>Images</h2>
+		<div class='menu'>
+		<a href="#"class='btn'data-filter='all'>All</a>
+		<a href="#"class='btn'data-filter='all'>Web</a>
+		<a href="#"class='btn'data-filter='all'>Nature</a>
+		<a href="#"class='btn'data-filter='all'>Icon</a>
+	</div>
+	<div class='box'id='item-stored'>
+		<div class='item-stored web'>
+			<img src="review4.jpg">
+		</div>
+		<div class='item-stored web'>
+			<img src="review3.jpg">
+		</div>
+		<div class='item-stored Nature'>
+			<img src="avenue-gc8ac20711_1920.jpg">
+		</div>
+		<div class='item-stored Nature'>
+			<img src="nature-g8ed7aef87_1920.jpg">
+		</div>
+		<div class='item-stored Icon'>
+			<img src="weather.png">
+		</div>
+		<div class='item-stored Icon'>
+			<img src="tom-barrett-hgGplX3PFBg-unsplash.jpg">
+		</div>
+		</div>
+	</div>
+	<script>
+		(function () {
+			// body...
+		const buttons = document.querySelectorAll('.btn');
+		const images = document.querySelectorAll('.item-stored');
+		buttons.forEach((button)=>{
+        buttons.addEventListener('click',(e)=>{
+        	e.preventDefault();
+        	const filter = e.target.dataset.filter;
+        	images.forEach((item)=>{
+        		if(filter==='all'){
+        			item.style.display='block';
+        		}else if(item.classList.contains(filter)){
+        			item.style.display='block';
+        		}else{
+        			item.style.display='none';
+        		}
+        	})
+        })
+		})
+
+
+})();
+</script>
+		
+</body>
+</html>
